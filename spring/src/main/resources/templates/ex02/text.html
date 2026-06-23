@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/css.css">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul>
+        <!-- 태그 속성으로 출력, HTML 특수문자를 escape한다 -->
+        <li><span th:text="${text}"></span></li>
+        <!-- 콘텐츠 영역에 직접 출력 -->
+        <li>th: text = <Strong><span th:text="${data}"></span></Strong></li>
+        <li>[[...]] 직접 출력 = [[${data}]]</li>
+        <!-- utext : unescape, 태그를 그대로 렌더링 한다.
+                     입력란에 함수를 작성해 공격을 받을 수 있기 때문에 조심해야함 -->
+        <li>th:utext = <span th:text="${data}"></span></li>
+    </ul>
+</div>
+<a href="/ex02">목록으로</a>
+</body>
+</html>

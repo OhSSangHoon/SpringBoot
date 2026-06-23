@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 폼</title>
+</head>
+<style>
+</style>
+<body>
+  <h1>회원가입 폼</h1>
+<!--　/ex02/join method = post -->
+  <form action="/ex01/join2" method="post">
+      <p>
+          <label for="username" id="id">아이디: </label>
+         <input type="text" id="username" name="username">
+      </p>
+      <p>
+          <label for="userpassword" id="pw">패스워드: </label>
+          <input type="password" id="userpassword" name="password">
+      </p>
+      <p>
+          <label for="usersname">이름: </label>
+          <input type="text" id="usersname" name="name">
+      </p>
+      <p>
+          <label for="userage" id="age">나이: </label>
+        <input type="text" id="userage" name="age">
+      </p>
+      <button>가입하기</button>
+  </form>
+</body>
+</html>

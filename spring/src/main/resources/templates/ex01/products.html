@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  a {
+    margin:0 20px;
+  }
+
+  li {
+    width:500px;
+    height:30px;
+    padding:15px;
+    list-style: none;
+    font-size:22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all ease-in-out;
+  }
+
+  li:hover {
+    transition: 0.3s all ease-in-out;
+    background-color: #b7e3ff;
+  }
+</style>
+<body>
+  <h1>[ 상품 목록 ]</h1>
+  <ul>
+    <li>컴퓨터<a href="/ex01/orders/1">[Forward] 주문하기</a></li>
+    <li>모니터<a href="/ex01/orders/2">[Forward] 주문하기</a></li>
+    <li>키보드<a href="/ex01/orders/3">[Forward] 주문하기</a></li>
+  </ul>
+  <ul>
+      <li>컴퓨터<a href="/ex01/orders/redirect/1">[Redirect] 주문하기</a></li>
+      <li>모니터<a href="/ex01/orders/redirect/2">[Redirect] 주문하기</a></li>
+      <li>키보드<a href="/ex01/orders/redirect/3">[Redirect] 주문하기</a></li>
+  </ul>
+</body>
+</html>

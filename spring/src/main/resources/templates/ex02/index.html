@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/css.css">
+    <title>ex02</title>
+</head>
+<body>
+  <h1>Thymeleaf 실습</h1>
+  <div>
+    <h3>text 표현</h3>
+    <ul>
+      <li><a href="ex02/text">텍스트 출력</a></li>
+    </ul>
+    <input type="text" id="textInput" placeholder="텍스트를 입력하세요">
+    <button type="button" onclick="goText()">확인</button>
+    </div>
+  <div>
+    <h3>variable 표현</h3>
+    <ul>
+      <li><a href="/ex02/variable">변수 표현식</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li><a href="/ex02/link">URL 링크</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li><a href="/ex02/each">반복문 Each</a></li>
+    </ul>
+  </div>
+
+  <!--
+    1. input의 값을 trim한 다음 변수에 저장
+    2. localtion.href = encodeURIComponent
+  -->
+  <script>
+    function goText(){
+      const text = document.getElementById("textInput").value.trim();
+      if(!text){
+        alert("값을 입력해주세요!");
+        return 0;
+      }
+
+      location.href = "/ex02/" + encodeURIComponent(text);
+    }
+  </script>
+</body>
+</html>

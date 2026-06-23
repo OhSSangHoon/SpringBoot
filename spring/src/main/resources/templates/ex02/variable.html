@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/css.css">
+  <title>Variable</title>
+</head>
+<body>
+  <h2>변수 표현식</h2>
+  <div>
+    <h3>Objects</h3>
+    <ul>
+      <!-- 一番 -->
+      <li>${username} = <span th:text = "${user.username}"></span></li>
+      <li>${user.getAge()} = <span th:text = "${user.getAge()}"></span></li>
+      <li>${user['username']} = <span th:text = "${user['username']}"></span></li>
+    </ul>
+  </div>
+  <div>
+  <h3>List</h3>
+    <ul>
+      <li>${users} = <span th:text = "${users}"></span></li>
+      <li>${userA} = <span th:text = ${users[0].username}></span></li>
+      <li>${userB} = <span th:text = ${users[1].username}></span></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Map</h3>
+    <ul>
+      <li>${userMap} = <span th:text = "${userMap}"></span></li>
+      <li>${userA} = <span th:text = ${userMap['userA'].username}></span></li>
+      <li>${userB} = <span th:text = ${userMap['userB'].username}></span></li>
+    </ul>
+  </div>
+  <div>
+    <h3>날짜 유틸리티</h3>
+    <ul>
+      <li>기본 : <span th:text = ${now}></span></li>
+      <li>temporals : <span th:text = "${#temporals.format(now, 'yyyy-MM-dd HH:mm:ss')}"></span></li>
+      <li>요일 : <span>[[${#temporals.dayOfWeekName(now)}]]</span></li>
+    </ul>
+  </div>
+  <!--
+    th:with로 만든 지역 변수는 해당 태그 내에서만 유효하다
+    <div>영역에 작성했으니 div태그를 벗어나면 사용할 수 없음
+   -->
+  <div th:with="first=${users[0]}, second=${users[1]}">
+    <h3>지역 변수 th:with</h3>
+    <p>처음 사람 이름은 <span th:text="${first.username}"></span></p>
+    <p>두번째 사람 이름은 <span th:text="${second.username}"></span></p>
+  </div>
+  <!--
+    Exception processing template "ex02/variable": Exception evaluating SpringEL expression: "first.username" (template: "ex02/variable" - line 68, col 6)
+  -->
+<!--  <p th:text="${first.username}"></p>-->
+</body>
+</html>

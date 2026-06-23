@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/css.css">
+    <title>Each</title>
+</head>
+<body>
+  <h1>Each</h1>
+  <div>
+    <h3>반복문</h3>
+    <table border="1">
+      <tr>
+        <th>username</th>
+        <th>age</th>
+      </tr>
+      <tr th:each="user : ${users}">
+        <td th:text="${user.username}">이름</td>
+        <td th:text="${user.age}">나이</td>
+        <td th:text="${userStat}">부가 정보</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

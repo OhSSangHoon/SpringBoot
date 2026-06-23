@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/css.css">
+</head>
+<script>
+    function formData() {
+        const formData = document.querySelector("form");
+        formData.submit();
+    }
+</script>
+<body>
+<h1>스프링 MVC</h1>
+<div>
+    <h3>1. RequestMapping</h3>
+    <ul>
+        <li><a href="/ex01/get">Get방식으로 전송 (@GetMapping)</a></li>
+        <li><a href="javascript:formData()">Post방식으로 전송 (@PostMapping)</a></li>
+    </ul>
+</div>
+<div>
+    <h3>2. RequestParam</h3>
+    <ul>
+        <li><a href="/ex01/hello?message=Get Hello Info">RequestParam이동 (@RequestParam)</a></li>
+    <!--    <li><a href="/ex02/search?">Search (@RequestParam Options)</a></li>-->
+        <li>
+            <form action="/ex01/search" method="get">
+                <input type="text" name="keyword">
+    <!--            <input type="number" name="page" value="0" style="display: none">-->
+    <!--            <input type="text" name="q" value="query" style="display: none">-->
+                <button>검색</button>
+            </form>
+        </li>
+        <li><a href="/ex01/join">회원가입 폼</a></li>
+    </ul>
+</div>
+<div>
+    <h3>3. Forward & Redirect</h3>
+        <ul>
+            <li><a href="/ex01/products">상품 구매</a></li>
+        </ul>
+    <h3>4. Timeleaf 실습</h3>
+    <ul>
+        <li><a href="/ex02">타임리프 실습</a></li>
+    </ul>
+</div>
+
+
+<form id="form" action="/ex01/post" method="post" style="display: none">
+    <button>전송</button>
+</form>
+
+</body>
+</html>

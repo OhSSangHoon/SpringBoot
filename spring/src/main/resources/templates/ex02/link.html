@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/css.css">
+    <title>URL 링크</title>
+</head>
+<body>
+    <div>
+    <h3>URL 링크</h3>
+        <ul>
+            <li>단순 URL <a th:href="@{/ex02/hello}">link click!</a></li>
+            <!-- /경로?속성1=값1&속성2=값2 -->
+            <!--
+                 경로 이동 없이 웹 주소(URL) 뒤에 추가 정보를 전달하여
+                 서버에게 구체적인 데이터를 요청하거나 필터링할 때 사용하는 매개변수
+            -->
+            <li>query parameter <a th:href="@{/ex02/link(param1=${param1}, param2=${param2})}">link click!</a></li>
+            <!-- 경로 변수 -->
+            <li>경로 변수 (Path Variable)1 <a th:href="@{/ex02/link/{param1}(param1 = ${param1})}">link click!</a></li>
+            <li>경로 변수 (Path Variable)2 <a th:href="@{/ex02/link/{param1}/{param2}(param1 = ${param1}, param2 = ${param2})}">link click!</a></li>
+            <!-- 경로 변수 + 쿼리 파라미터 -->
+            <li>경로 변수 + 쿼리 파라미터 <a th:href="@{/ex02/link/{param1}(param1 = ${param1}, param2=${param2})}">link click!</a></li>
+        </ul>
+    </div>
+</body>
+</html>

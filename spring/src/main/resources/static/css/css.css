@@ -1,0 +1,30 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+}
+
+input {
+    width: 500px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 15px;
+    font-size:18px;
+}
+
+button {
+    width: 70px;
+    height: 50px;
+    padding: 10px;
+    font-size:18px;
+}
+
+div {
+    border:1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top:10px;
+}
