@@ -1,0 +1,19 @@
+yamlversion: 1
+language: "ko"
+reviews:
+  timeout: 60 # 리뷰 완료 대기 시간 (분)
+  type: "full" # 전체 리뷰 수행
+  auto_review:
+    enabled: true
+    drafts: false # Draft PR 리뷰 여부
+  label: "coderabbit" # PR에 추가될 라벨 이름
+  path_filters:
+    include:
+      - "src/**"
+    exclude:
+      - "**/*.md"
+      - "docs/**"
+  instructions: |
+    코드를 보고 해당 코드의 설명을 해주세요.
+    spring boot에 대한 설명을 해주세요.
+profile: "chill"  # assertive(엄격) / chill(일반)
