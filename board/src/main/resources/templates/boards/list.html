@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
   <link rel="stylesheet" href="/css.css">
     <title>Title</title>
 </head>
+<style>
+</style>
 <body>
-  <div class="container">
     <header class="topbar">
-      <h1>게시판</h1>
+      <a href="/boards" class="brand">게시판</a>
     </header>
-    <button onclick=location.href="/boards/write" class="btn">글 쓰기</button>
-  </div>
+    <div class="container">
+      <h1>게시글 목록</h1>
+      <div class="toolbar">
+        <span></span>
+        <button onclick="location.href='/boards/write'" class="btn">글쓰기</button>
+      </div>
+      <table class="board-list">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="board: ${boards}">
+            <td th:text="${boardStat.count}"></td>
+            <td>
+              <a th:href="@{/boards/{id}(id=${board.id})}" th:text="${board.title}">제목</a>
+            </td>
+            <td th:text="${board.writer}">작성자</td>
+            <td th:text="${board.viewCount}">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </body>
 </html>

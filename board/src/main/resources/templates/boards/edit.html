@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update</title>
+  <link rel="stylesheet" href="/css.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/boards">게시판</a>
+</header>
+<div class="container">
+  <h1>게시글 수정</h1>
+  <div class="card">
+    <form th:action="@{/boards/{id}/edit(id=${board.id})}" method="post">
+      <input type="hidden" name="id" th:value="${board.id}">
+      <div class="form-group">
+        <label for="title">제목</label>
+        <input type="text" name="title" id="title" th:value="${board.title}">
+      </div>
+      <div class="form-group">
+        <label for="writer">작성자</label>
+        <input type="text" name="writer" id="writer" th:value="${board.writer}">
+      </div>
+      <div class="form-group">
+        <label for="content">내 용</label>
+        <textarea name="content" id="content" th:text="${board.content}"></textarea>
+      </div>
+      <button type="submit" class="btn" onclick="return confirm('이대로 수정하시겠습니까?')">수정</button>
+      <a th:href="@{/boards/{id}(id=${board.id})}" class="btn gray">취소</a>
+    </form>
+  </div>
+</div>
+</body>
+</html>
