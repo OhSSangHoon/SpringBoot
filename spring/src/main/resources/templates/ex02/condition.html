@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/css.css">
+    <title>조건부 평가</title>
+</head>
+<body>
+  <h2>조건부 평가</h2>
+  <div>
+    <h3>[ if, unless ]</h3>
+    <table border=1>
+      <tr>
+        <td>Count</td>
+        <td>Username</td>
+        <td>Age</td>
+      </tr>
+      <tr th:each="user : ${users}">
+        <td th:text="${userStat.count}"></td>
+        <td th:text="${user.username}"></td>
+        <td>
+          <span th:text="${user.age}"></span>
+        </td>
+        <td>
+          <span th:if="${user.age < 30}" th:text="'30세 미만'"></span>
+          <span th:unless="${user.age < 30}" th:text="'30세 이상'"></span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <h3>[ switch, case ]</h3>
+    <table border="1">
+      <tr>
+        <td>Count</td>
+        <td>Username</td>
+        <td>Age</td>
+      </tr>
+      <tr th:each="user : ${users}">
+        <td th:text="${userStat.count}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:switch="${user.age}">
+          <span th:case="20">20살</span>
+          <span th:case="34">34살</span>
+          <span th:case="*">미상</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

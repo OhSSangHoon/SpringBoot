@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/css.css">
+    <title>Operation</title>
+</head>
+<body>
+    <h2>Operation</h2>
+    <div>
+        <h3>산술 연산</h3>
+        <ul>
+            <li>10 + 2 = <b><span th:text="10 + 2"></span></b></li>
+            <!-- true -->
+            <li>10 % 2 == 0 = <b><span th:text="10 % 2 == 0"></span></b></li>
+            <!-- false -->
+            <li>10 % 2 == 1 = <b><span th:text="10 % 2 == 1"></span></b></li>
+        </ul>
+    </div>
+    <div>
+        <h3>비교 연산</h3>
+        <ul>
+            <li>1 > 10 = <span th:text="1 > 10"></span></li>
+            <!-- 11이 10보다 큰가? -->
+            <li>11 gt 10 = <span th:text="11 gt 10"></span></li>
+            <!-- 9은 10보다 크거나 같다 -->
+            <li>9 ge 10 = <span th:text="9 ge 10"></span></li>
+            <li>10 == 10 = <span th:text="10 == 10"></span></li>
+            <li>10 != 10 = <span th:text="10 != 10"></span></li>
+        </ul>
+    </div>
+    <div>
+        <h3>조건식</h3>
+        <ul>
+            <li>(10 % 2 == 0) ? '짝수' : '홀수'　= <b><span th:text="(10 % 2 == 0) ? '짝수' : '홀수'"></span></b></li>
+        </ul>
+    </div>
+    <div>
+        <h3>Elvis 연산자</h3>
+        <ul>
+            <!-- ?: 이 연산자다 ${data}의 값이 없을 경우 대체로 출력할 문구를 지정할 수 있다. -->
+            <!-- ${data}의 값이 있으면 값을 출력 없으면 미리 작성한 문구를 대체로 출력 -->
+            <li>${data} ?: '데이터가 없습니다' = <b><span th:text="${data}?: '데이터가 없습니다.'"></span></b></li>
+        </ul>
+    </div>
+    <div>
+        <h3>No Operation</h3>
+        <ul>
+            <li>${data}:_ = <b><span th:text="${data}?:_">데이터가 없습니다.</span></b></li>
+        </ul>
+    </div>
+</body>
+</html>

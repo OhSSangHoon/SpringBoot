@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/css.css">
+    <title>Title</title>
+</head>
+<body>
+    <h2>리터럴</h2>
+    <div>
+        <ul>
+            <!-- literal을 표시할 때는 작은 따옴표로 감싸서 표시한다. "'abc'" -->
+            <li>"hello world" = <b><span th:text="'hello world'"></span></b></li>
+            <li>"hello" + "world" = <b><span th:text="'hello' + 'world'"></span></b></li>
+            <li>"hello" + ${data} = <b><span th:text="'hello' + ${data}"></span></b></li>
+            <li>리터럴 대체 |hello ${data}| = <b><span th:text="|hello ${data}|"></span></b></li>
+        </ul>
+    </div>
+</body>
+</html>

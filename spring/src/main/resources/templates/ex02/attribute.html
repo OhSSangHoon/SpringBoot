@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/css.css">
+    <title>Attribute</title>
+</head>
+<body>
+  <h2>attribute</h2>
+  <div>
+    <!--
+      th：속성명 -> 기존 속성을 대체하고 없으면 추가한다
+    -->
+    <h3>속성 설정</h3>
+    <p>th:{속성명} : <input type="text" name="name" th:type="password"></p>
+  </div>
+  <div>
+    <h3>속성 추가</h3>
+    <!-- class명이 classlarge로 변경 -->
+    <p>th:attrappend : <input type="text" class="text" th:attrappend="class='large'"></p>
+    <!-- large class를 추가 -->
+    <p>th:classappend : <input type="text" class="text" th:classappend="'large'"></p>
+  </div>
+  <div>
+    <h3>Checked 처리</h3>
+    <p>Checked : <input type="checkbox" name="active" checked="checked"></p>
+    <!-- thymeleaf -->
+    <p>Thymeleaf_Checked : <input type="checkbox" name="active" th:checked="true"></p>
+  </div>
+</body>
+</html>

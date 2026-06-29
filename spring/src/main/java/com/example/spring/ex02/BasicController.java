@@ -74,4 +74,51 @@ public class BasicController {
 		return "ex02/each";
 	}
 
+	@GetMapping("/literal")
+	public String literal(Model model){
+		model.addAttribute("data", "Spring!");
+		return "ex02/literal";
+	}
+
+	@GetMapping("/operation")
+	public String operation(Model model){
+		model.addAttribute("data", "Spring!");
+		return "ex02/operation";
+	}
+
+
+	@GetMapping("/attribute")
+	public String attribute(Model model){
+
+		return "ex02/attribute";
+	}
+
+	@GetMapping("/condition")
+	public String condition(Model model){
+		List<User> list = List.of(
+				new User("UserA", 20),
+				new User("UserB", 25),
+				new User("UserC", 34)
+		);
+		model.addAttribute("users", list);
+		return "ex02/condition";
+	}
+
+	@GetMapping("/comments")
+	public String comments(Model model){
+		model.addAttribute("user1", new User("user1", 20));
+		model.addAttribute("data", "Spring!!");
+		return "ex02/comments";
+	}
+
+	@GetMapping("/block")
+	public String block(Model model){
+		List<User> list = List.of(
+				new User("userA", 20),
+				new User("userB", 25),
+				new User("userC", 23));
+		model.addAttribute("users", list);
+		return "ex02/block";
+	}
+
 }

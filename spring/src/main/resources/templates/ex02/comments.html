@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/css.css">
+    <title>타임리프 주석</title>
+</head>
+<body>
+  <h2>타임리프 주석</h2>
+  <!--
+    1. 표준　HTML 주석 : Thymeleaf가 랜더링 하지 않고 그대로 출력
+    2. Thymeleaf Parser 주석 : 렌더링에서 주석 부분을 제거한다.
+    3. ThymeLeaf 프로토타입 주석 :
+  -->
+  <div>
+    <h2>1. 표준 HTML 주석</h2>
+    <!-- <span th:text="${data}"></span>-->
+
+    <h2>2. Thymeleaf Parser 주석</h2>
+    <!-- 주석처리를 해도 렌더링 대상에 포함되기 떄문에 오류가 사라지지 않을 수 있음. -->
+    <!-- [[${user1.username}]]-->
+
+    <!-- /**/를 넣으면 렌더링 대상에 포함되지 않음 -->
+    <!--/* [[${user1.username}]] */-->
+
+    <!--/*-->
+    <span th:text="${data}"></span>
+    <!--*/-->
+
+    <h2>3. Thymeleaf Prototype 주석</h2>
+    <!--/* 소스코드에서는 주석처리 되었지만 실제로는 렌더링 됨 */-->
+    <!--/*/
+      <span th:text="${data}"></span>
+    /*/-->
+  </div>
+</body>
+</html>
