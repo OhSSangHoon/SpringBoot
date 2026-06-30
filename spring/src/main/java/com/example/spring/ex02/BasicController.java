@@ -121,4 +121,16 @@ public class BasicController {
 		return "ex02/block";
 	}
 
+	@GetMapping("/javascript")
+	public String javascript(Model model) {
+		model.addAttribute("user", new User("user1", 25));
+		List<User> list = List.of(
+				new User("UserA", 20),
+				new User("UserB", 25),
+				new User("UserC", 34)
+		);
+		model.addAttribute("users", list);
+		return "ex02/javascript";
+	}
+
 }

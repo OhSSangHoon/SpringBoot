@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/css.css">
+    <title>Javascript</title>
+    <script th:inline="javascript">
+        let username = [[${user.username}]];
+        /* 자바스크립트 내추럴 템플릿 : 서버 없이 HTML (자바스크립트) 파일을 깨지지 않고 표시할 수 있다. */
+        let username２ = /*[[${user.username}]]*/ "testUser";
+        let user = [[${user}]];
+    </script>
+    <script th:inline="javascript">
+        [# th:each="user : ${users}"]
+            let user[[${userStat.count}]] = [[${user}]];
+        [/]
+    </script>
+</head>
+<body>
+    <h2>Javascript</h2>
+    <div>
+        <ul>
+            <li th:text="${user.username}"></li>
+        </ul>
+    </div>
+</body>
+</html>
