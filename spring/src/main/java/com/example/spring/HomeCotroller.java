@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeCotroller {
 	@RequestMapping(method = {RequestMethod.POST, RequestMethod.GET})
 	public String index() {
-		System.out.println("index 호출");
+//		System.out.println("index 호출");
 		return "index";
 	}
 

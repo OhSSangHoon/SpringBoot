@@ -48,8 +48,18 @@
     <h3>5. Cookie와 Session</h3>
     <ul>
         <li><a href="/ex03">Cookie</a></li>
-        <li><a href="/ex03/cookie/set?userId=user1">Cookie</a></li>
+        <li><a href="/ex03/cookie/set?userId=user1">Set Cookie</a></li>
+        <li><a href="/ex03/cookie/get">Read Cookie</a></li>
+        <li><a href="/ex03/cookie/remove">Remove Cookie</a></li>
     </ul>
+    <ul>
+        <li><a href="/ex03/session/set?userId=sanghun22">Set Session</a></li>
+        <li><a href="/ex03/session/get">Get Session</a></li>
+        <li><a href="/ex03/session/remove">Remove Session</a></li>
+    </ul>
+</div>
+<div th:if="${session.userId}">
+    <p >생성된 Session: <span th:text="${session.userId}"></span></p>
 </div>
 
 
